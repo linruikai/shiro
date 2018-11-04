@@ -1,17 +1,17 @@
 package com.douban.shiro.bean;
 
 
+import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
+import java.util.Set;
 
-public class User {
-
+public class User implements Serializable{
     private Integer id;
-    private String name;
-    private String phone;
+    private String username;
     private String password;
-    private Date createTime;
-    private Date updateTime;
-    private Integer status;
+    private String role;
+    private Integer enable;
 
     public Integer getId() {
         return id;
@@ -21,20 +21,12 @@ public class User {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -45,27 +37,30 @@ public class User {
         this.password = password;
     }
 
-    public Date getCreateTime() {
-        return createTime;
+    public String getRole() {
+        return role;
     }
 
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
+    public void setRole(String role) {
+        this.role = role;
     }
 
-    public Date getUpdateTime() {
-        return updateTime;
+    public Integer getEnable() {
+        return enable;
     }
 
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
+    public void setEnable(Integer enable) {
+        this.enable = enable;
     }
 
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", role='" + role + '\'' +
+                ", enable=" + enable +
+                '}';
     }
 }

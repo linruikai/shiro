@@ -6,6 +6,9 @@ import com.douban.shiro.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Set;
+
 /**
  * Created by ruikai.lin  on 2018/9/13 下午5:06.
  * Email: ruikai.lin@plusx.cn
@@ -16,7 +19,12 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserMapper userMapper;
     @Override
-    public User getByPhone(String phone) {
-        return userMapper.getByPhone(phone);
+    public User getByUsername(String phone) {
+        return userMapper.getByUsername(phone);
+    }
+
+    @Override
+    public Set<Integer> getRoles(Integer id) {
+        return userMapper.getRoles(id);
     }
 }

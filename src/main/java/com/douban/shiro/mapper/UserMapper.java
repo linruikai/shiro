@@ -4,6 +4,9 @@ import com.douban.shiro.bean.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
+import java.util.List;
+import java.util.Set;
+
 /**
  * Created by ruikai.lin  on 2018/9/13 下午6:07.
  * Email: ruikai.lin@plusx.cn
@@ -12,6 +15,9 @@ import org.apache.ibatis.annotations.Select;
 @Mapper
 public interface UserMapper {
 
-    @Select("select * from user where phone = #{phone}")
-    User getByPhone(String phone);
+    @Select("select * from user where username = #{username} ")
+    User getByUsername(String username);
+
+    @Select("select role_id from user_role where user_id = #{id} ")
+    Set<Integer> getRoles(Integer id);
 }
